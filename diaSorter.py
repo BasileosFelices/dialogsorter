@@ -1,3 +1,4 @@
+from time import process_time_ns
 from openpyxl import Workbook, load_workbook
 from openpyxl.utils import get_column_letter
 import datetime
@@ -11,6 +12,7 @@ class TextModeler:
     def cleanSpaces(string):
         return " ".join(string.split())
     
+    # @staticmethod
     # @staticmethod
     # def readTime(string):
         
@@ -41,15 +43,55 @@ class Person:
 class Sorter:
     def __init__(self):
         self.mTest = "AhoJ svete"
-        pass
+        self.mConfigInfo = configparser.ConfigParser()
+        self.mConfigInfo.read("config.ini")
+        
+        if not self.testConfigFile(self.mConfigInfo):
+            raise ImportError("Invalid config.ini file.")
+
+        self.mExReader = ExcelReader(self.mConfigInfo)
+
+    def testConfigFile(self, config):
+        if "data" not in config:
+            return False
+        if "excel header" not in config:
+            return False
+        return True
 
 class ExcelReader:
     header = {}
     def __init__(self, configinfo):
         self.mHeaderIsRead = False
-        self.mConfigForExcelRead = configinfo
-    def readHeader(source):
-        pass
+        self.mConfig = configinfo
+        self.mConfigHeader = self.mConfig["excel header"]
+        self.mExcelSource = load_workbook(self.mConfig["data"]["filename"])
+        self.mExcelWorkSheet = self.mExcelSource.active
+
+        self.readHeader()
+
+    def readHeader(self):
+        row = 1
+        col = 0
+        while True:
+            col += 1
+            coord = get_column_letter(col) + str(row)
+            
+            if not bool(self.mExcelWorkSheet[coord].value):
+                break
+            
+            print(self.mExcelWorkSheet[coord].value)
+        for headerKey in self.mConfigHeader:
+            print(self.mConfigHeader.get(headerKey))
+            
+
+        
+        
+
+
+
+
+
+
 
 pers1 = Person("Petr", "pavpetr@fit.cvut.cz", "8.a", datetime.datetime(2022, 6, 23), ["Anna", "Zuzka", "Alzbeta"])
 
@@ -60,3 +102,5 @@ excelsource = load_workbook("dialog_data.xlsx")
 ws = excelsource.active
 print(ws["C3"].value)
 print(type(ws["C3"].value))
+
+app = Sorter()
