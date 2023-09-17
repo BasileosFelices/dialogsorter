@@ -1,7 +1,5 @@
-from time import process_time_ns
 from openpyxl import Workbook, load_workbook
 from openpyxl.utils import get_column_letter
-import datetime
 import configparser
 
 class TextModeler:
@@ -61,11 +59,20 @@ class Sorter:
 class ExcelReader:
     header = {}
     def __init__(self, configinfo):
+        # configfileread
         self.mHeaderIsRead = False
         self.mConfig = configinfo
         self.mConfigHeader = self.mConfig["excel header"]
+        # excel file read 
         self.mExcelSource = load_workbook(self.mConfig["data"]["filename"])
         self.mExcelWorkSheet = self.mExcelSource.active
+        # reading header definitions from config
+        self.mHeaderDef = {}
+        self.mHeaderDefReverse = {}
+        for headerKey in self.mConfigHeader:
+            self.mHeaderDef.update({headerKey : self.mConfigHeader.get(headerKey)})
+            self.mHeaderDefReverse.update({self.mConfigHeader.get(headerKey) : headerKey})
+        self.mHeaderCoord = {}
 
         self.readHeader()
 
@@ -75,13 +82,18 @@ class ExcelReader:
         while True:
             col += 1
             coord = get_column_letter(col) + str(row)
+            cellvalue = self.mExcelWorkSheet[coord].value
             
-            if not bool(self.mExcelWorkSheet[coord].value):
+            # Stop at 'None' value - empty cell
+            if not bool(cellvalue):
                 break
             
-            print(self.mExcelWorkSheet[coord].value)
-        for headerKey in self.mConfigHeader:
-            print(self.mConfigHeader.get(headerKey))
+            # print(cellvalue)
+            if cellvalue in self.mHeaderDefReverse:
+                print("LOCATED:", cellvalue, "as", self.mHeaderDefReverse[cellvalue])
+                self.mHeaderCoord.update( {self.mHeaderDefReverse[cellvalue] : col} )
+        print(self.mHeaderCoord)
+                
             
 
         
@@ -93,14 +105,14 @@ class ExcelReader:
 
 
 
-pers1 = Person("Petr", "pavpetr@fit.cvut.cz", "8.a", datetime.datetime(2022, 6, 23), ["Anna", "Zuzka", "Alzbeta"])
+# pers1 = Person("Petr", "pavpetr@fit.cvut.cz", "8.a", datetime.datetime(2022, 6, 23), ["Anna", "Zuzka", "Alzbeta"])
 
-print(pers1.mPreferences)
-print(pers1)
+# print(pers1.mPreferences)
+# print(pers1)
 
-excelsource = load_workbook("dialog_data.xlsx")
-ws = excelsource.active
-print(ws["C3"].value)
-print(type(ws["C3"].value))
+# excelsource = load_workbook("dialog_data.xlsx")
+# ws = excelsource.active
+# print(ws["C3"].value)
+# print(type(ws["C3"].value))
 
 app = Sorter()
