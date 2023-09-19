@@ -4,4 +4,6 @@ class TextModeler:
     
     @staticmethod
     def cleanSpaces(string):
+        if not isinstance(string, str):
+            return string
         return " ".join(string.split())
