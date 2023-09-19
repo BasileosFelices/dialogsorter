@@ -2,3 +2,4 @@
 **/.vscode/
 counter
 dialog
+__pycache__/*
