@@ -1,4 +1,4 @@
-from Sorter import *
+import Sorter
 # pers1 = Person("Petr", "pavpetr@fit.cvut.cz", "8.a", datetime.datetime(2022, 6, 23), ["Anna", "Zuzka", "Alzbeta"])
 
 # print(pers1.mPreferences)
@@ -9,4 +9,5 @@ from Sorter import *
 # print(ws["C3"].value)
 # print(type(ws["C3"].value))
 
-app = Sorter()
+app = Sorter.Sorter()
+app.run()
