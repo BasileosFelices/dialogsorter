@@ -21,7 +21,8 @@ class Sorter:
     def run(self):
         self.readPeople()
         self.readActivities()
-        self.sortPeople()
+        self.sortPeoplePriority()
+        self.asignAskers()
 
     def readPeople(self):
         while True:
@@ -35,12 +36,12 @@ class Sorter:
         slotNum = 0
         for slot in self.mExReader.readPerson(1).mPreferences:
             for activity in slot:
-                self.mActivities.append( Activity.Activity(activity, slotNum) )
+                self.mActivities.append( Activity.Activity(activity, slotNum, self.mConfigInfo["capacity"]) )
             slotNum += 1
         for act in self.mActivities:
             print(act)
 
-    def sortPeople(self):
+    def sortPeoplePriority(self):
         self.mPeople.sort()
 
     def testConfigFile(self, config):
@@ -50,4 +51,12 @@ class Sorter:
             return False
         if "slot" not in config:
             return False
+        if "priority" not in config:
+            return False
         return True
+    
+    def asignAskers(self):
+        print("="*7 + "ASIGNPROCESS"+"="*7)
+        for person in self.mPeople:
+            print(person)
+    
