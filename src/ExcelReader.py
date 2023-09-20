@@ -102,7 +102,8 @@ class ExcelReader:
             preferences.update( {slotInformation : cellvalue} )
 
 
+
         if bool(personalInfo["name"]) is False:
             return False
         
-        return Person.Person(personalInfo, preferences) 
+        return Person.Person(personalInfo, preferences, self.mConfig["priority"]["orderby"]) 
