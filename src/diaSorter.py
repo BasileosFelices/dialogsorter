@@ -12,6 +12,6 @@ import Sorter
 app = Sorter.Sorter()
 app.run()
 
-app.printActivityAttendance()
+# app.printActivityAttendance()
 
 print("REACHED END")

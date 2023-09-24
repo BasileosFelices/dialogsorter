@@ -10,7 +10,6 @@ class ExcelReader:
     header = {}
     def __init__(self, configinfo):
         # configfileread
-        self.mHeaderIsRead = False
         self.mConfig = configinfo
         # excel file read 
         self.mExcelSource = load_workbook(self.mConfig["data"]["filename"])

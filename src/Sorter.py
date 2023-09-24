@@ -1,3 +1,4 @@
+import ExcelPrinter
 import ExcelReader
 import Person
 import TextModeler
@@ -24,6 +25,14 @@ class Sorter:
         self.sortPeoplePriority()
         self.asignAskers()
 
+        self.mExPrinter = ExcelPrinter.ExcelPrinter(self.mConfigInfo)
+
+        self.mExPrinter.outputPeopleSheet(self.mPeople)
+        self.mExPrinter.outputActivitySheets(self.mActivities)
+        self.mExPrinter.saveFile()
+
+        return
+
     def readPeople(self):
         while True:
             newPerson = self.mExReader.readPerson()
@@ -32,6 +41,7 @@ class Sorter:
             # print(newPerson)
             self.mPeople.append(newPerson)
         # print(self.mPeople)
+        return
     def readActivities(self):
         slotNum = 0
         for slot in self.mExReader.readPerson(1).mPreferences:
@@ -41,9 +51,11 @@ class Sorter:
         print("="*7 + "LOCATED ACTIVITIES"+"="*7)
         for act in self.mActivities:
             print(act)
+        return
 
     def sortPeoplePriority(self):
         self.mPeople.sort()
+        return
 
     def testConfigFile(self, config):
         if "data" not in config:
@@ -79,12 +91,15 @@ class Sorter:
                 if foundActivity is False:
                     print("!!", person, "has no allocated activity in slot", slotNumber)
             # print(person.mActivities)
+        return
     def printActivityAttendance(self):
         print("="*7 + "ACTIVITY ATTENDANCE"+"="*7)
         for activity in self.mActivities:
-            print("\n" + activity.mName)
+            print("\n" + activity.mName + "(" + str(len(activity.mApplicants)) + ")")
             print("---------")
             for person in activity.mApplicants:
                 print(person)
+        return
+        
 
     

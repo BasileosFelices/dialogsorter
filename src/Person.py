@@ -27,3 +27,18 @@ class Person:
         return str(self)
     def __lt__(self, other):
         return self.mPersonalInfo[self.mPriority] < other.mPersonalInfo[self.mPriority]
+    
+    def outputHeaderInfo(self) -> list:
+        headerInfo = []
+        # header stats with personal info
+        for personinfoheader in self.mPersonalInfo.keys():
+            headerInfo.append(personinfoheader)
+        # follows assingned activities
+        for i in range(len(self.mActivities)):
+            headerInfo.append( "Slot " + str(i + 1) )
+        return headerInfo
+    def outputPersonalInfo(self) -> list:
+        datalist = []
+        for data in self.mPersonalInfo.values():
+            datalist.append(data)
+        return datalist
