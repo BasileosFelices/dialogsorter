@@ -94,7 +94,7 @@ class ExcelReader:
 
         Args:
             personNumber (int, optional): If given positive int, reads the personNumber'th
-            person without advancing the static counter. Defaults to 0 - read next
+                                            without advancing the static counter. Defaults to 0 - read next
 
         Returns:
             Person: Person with both personal info and preferences and neccesery config file
