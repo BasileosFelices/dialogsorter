@@ -23,7 +23,10 @@ class Activity:
     ) -> None:
         """constructs an Activity, without passing capacityconfig, the capacity is set to 0
 
-        This behaviour is mainly for creating temporary activities used only for searching or sorting
+        This behaviour is mainly for creating temporary activities used only for searching or sorting.
+
+        When capacity is not located in config file, user is asked to input the capacity manually. Until integer is 
+        inputed, the program refuses to advance.
 
         Args:
             name (str): Required parameter, used for searching, activities with same name are considered eq
@@ -48,6 +51,10 @@ class Activity:
             while not inputvalid:
                 try:
                     self.mCapacity = int(input("Please input the desired capacity:\n"))
+                    if self.mCapacity < 0: raise ValueError("Capacity cannot be negative")
+                except ValueError as valueer:
+                    print(valueer)
+                    print("Invalid input, please try again.")
                 except:
                     print("Invalid input, please try again.")
                 else:
