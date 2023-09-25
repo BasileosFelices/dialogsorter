@@ -10,8 +10,8 @@ class ExcelPrinter:
     """Helper class used for outputing a new excel file with generated sheets
 
     Attributes:
-        mConfig = configfile, required for filename reading
-        mExcelFile = openpyxl excelfile
+        mConfig: configfile, required for filename reading
+        mExcelFile: openpyxl excelfile
     """
 
     mConfig = cp.ConfigParser()
@@ -72,14 +72,14 @@ class ExcelPrinter:
                     column += 1
         return
 
-    def outputPeopleSheet(self, people):
+    def outputPeopleSheet(self, people) -> None:
         """Outputs new sheet with all the people and their asigned activities.
 
         Every sheet contains all personal info
         and even asigned activites to the person.
 
         Args:
-            activities (list): list of people
+            people (list): list of people
 
         Returns:
             None : Everything is written to mExcelFile
