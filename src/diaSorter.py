@@ -1,17 +1,17 @@
-import Sorter
-# pers1 = Person("Petr", "pavpetr@fit.cvut.cz", "8.a", datetime.datetime(2022, 6, 23), ["Anna", "Zuzka", "Alzbeta"])
+"""This servers as the main function of the Dialog sorter project
 
-# print(pers1.mPreferences)
-# print(pers1)
+Dialog sorter is a script used for sorting people by their preferences submitted through an electronic form
+to activities that belong to a certain time slots.
 
-# excelsource = load_workbook("dialog_data.xlsx")
-# ws = excelsource.active
-# print(ws["C3"].value)
-# print(type(ws["C3"].value))
+The needs are tailored primarly for Dialog event at Gymnazium Jaroslava Heyrovskeho in Prague
 
-app = Sorter.Sorter()
+@Filip Spelina, 2023
+https://github.com/BasileosFelices/dialogsorter
+"""
+
+from Sorter import Sorter
+
+app = Sorter()
 app.run()
 
-# app.printActivityAttendance()
-
-print("REACHED END")
+print("SUCCESFULL END")
