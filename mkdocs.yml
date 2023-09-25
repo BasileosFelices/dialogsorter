@@ -1,0 +1,11 @@
+site_name: Dialog Sorter Documentation
+
+repo_url: https://github.com/BasileosFelices/dialogsorter
+
+plugins:
+  - mkdocstrings
+
+theme:
+  name: material
+  palette:
+    scheme: default
