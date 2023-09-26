@@ -1,0 +1,1 @@
+# HowTo: Setting up a config file 
