@@ -19,6 +19,8 @@ class Person:
         Preferences are passed in crude form gotten from the excel file. Constructor crunches them into a prettier form.
         List of lists of preferences per slot.
 
+        The **delimiter** variable could be changed in case the preferences are not split by semicolon.
+
         Args:
             personalInfo (list): personal information {property:value}
             preferences (list): preferences for activities in order of timeslots
@@ -30,9 +32,10 @@ class Person:
         self.mPriority = priorityTag
 
         slotNum = 0
+        delimiter = ';'
         for slot in preferences.values():
             self.mPreferences.append([])
-            for activity in slot.split(";"):
+            for activity in slot.split(delimiter):
                 if activity == "":
                     continue
                 self.mPreferences[slotNum].append(activity)
