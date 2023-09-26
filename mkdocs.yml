@@ -5,7 +5,7 @@ copyright: Filip Spelina, 2023
 
 plugins:
   - mkdocstrings
-  - with-pdf
+  # - with-pdf
 
 markdown_extensions:
   - admonition
