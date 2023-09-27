@@ -4,7 +4,7 @@ title: Welcome
 
 # Welcome to DialogSorter
 
-This program/script is designed specificaly to help during Dialog event at Gymjh in Prague. 
+This program/script is designed specifically to help during Dialog event at Gymjh in Prague. 
 
 DialogSorters takes an excel file with online form answers where people were asked to set an order of preference for different time slots and activities those slots occupied. As capacity can be limited, this script sorts people based on their desired preferences but keeps the capacity in mind. When an activity is full, a person is refused and receives a less desired option.
 
@@ -31,14 +31,14 @@ However, In special circumstances such as incorrectly typed config file, user ma
 
 ## License and credits
 
-I am publishing freerly under opensource MIT license. For the foreseeable future I am happy to maintain this and help if contacted, but if anyone wishes to improve on this and use this somehow, feel free. I used the oportunity of this project to refresh my weak memory of python and learn something new. Like making a cool documentation! In any case, the code is far from beatiful and the options are pretty limited. Any input is appriciated!
+I am publishing freely under open-source MIT license. For the foreseeable future I am happy to maintain this and help if contacted, but if anyone wishes to improve on this and use this somehow, feel free. I used the opportunity of this project to refresh my weak memory of python and learn something new. Like making a cool documentation! In any case, the code is far from beautiful and the options are pretty limited. Any input is appreciated!
 
 General thanks need to go to Jiří Sejkora who asked me to even do this and kept me motivated enough to finish this.
 
 Openpyxl, MKDocs and Material theme for MKDocs are utilized.
 
 !!! tip
-    To actually get started try looking up the **Getting started** section on the left.:)
+    To actually get started try looking up the [**Getting started**](getting-started.md) section on the left.:)
 
 !!! info
     As you can see, I am quite enjoying making these note-like boxes.
