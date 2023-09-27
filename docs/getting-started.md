@@ -14,7 +14,7 @@ You can also just download the repository as zip and extract wherever you want t
 ### Installing python and openpyxl
 
 First of all, you need python on your system. Luckily, you can find a lot of tutorials for that online. You also need to be able to use
-python pip package manager as the second step is installing the requiered openpyxl library. You can use a provided `requirements.txt` file
+python pip package manager as the second step is installing the required openpyxl library. You can use a provided `requirements.txt` file
 
 ```shell
 pip install -r requirements.txt
@@ -24,11 +24,11 @@ pip install -r requirements.txt
 
 While the goal was to make only minimal demands on the structure of the input data, there still are some limitations. Most importantly it needs to be an Excel file (xlsx/xlsm/xltx/xltm)
 
-The script expects a table typically generated from an online form, i one row header and than rows of data for each answer/person. There are no requirements on the order or even number of colums. The important columns are found thanks to header names that can be configured in the config file. While the config should handle complicated headers, it is reccomended to rename the imporant headers for simplicity.
+The script expects a table typically generated from an online form, i one row header and than rows of data for each answer/person. There are no requirements on the order or even number of columns. The important columns are found thanks to header names that can be configured in the config file. While the config should handle complicated headers, it is recommended to rename the important headers for simplicity.
 
-The preferences have the most strict format. Every time slot, the multiple options of which only one is chosen that is, has to be in a single cell and different options need to be sorted by the preference and delimited by a semicolon(;). At the moment this is hard-coded behaviour, although the delimited could be quiete easily changed in [code](reference/Person.md). 
+The preferences have the most strict format. Every time slot, the multiple options of which only one is chosen that is, has to be in a single cell and different options need to be sorted by the preference and delimited by a semicolon(;). At the moment this is hard-coded behavior, although the delimited could be quite easily changed in [code](reference/Person.md). 
 
-I reccomend keeping the data file in the root folder. 
+I recommend keeping the data file in the root folder. 
 
 !!! example
     The input data can really be as simple as this. Both more slots and personal info may be included, however.
@@ -54,7 +54,7 @@ For now use the supplied `config.ini` as a start. Open in and be sure to modify:
 
 ### Run the script
 
-Everything should be ready now! Run the `diaSorter.py` either from your favourite IDE or a console.
+Everything should be ready now! Run the `diaSorter.py` either from your favorite IDE or a console.
 
 ```shell
 python diasorter/diaSorter.py
