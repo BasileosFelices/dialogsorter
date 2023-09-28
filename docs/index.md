@@ -4,7 +4,7 @@ title: Welcome
 
 # Welcome to DialogSorter
 
-This program/script is designed specifically to help during Dialog event at Gymjh in Prague. 
+This program/script is designed specifically to help during Dialog event at Gymjh in Prague. Feel free to use it if it could help you too!
 
 DialogSorters takes an excel file with online form answers where people were asked to set an order of preference for different time slots and activities those slots occupied. As capacity can be limited, this script sorts people based on their desired preferences but keeps the capacity in mind. When an activity is full, a person is refused and receives a less desired option.
 
@@ -16,6 +16,7 @@ Or none at all.
 ## Output
 
 The script generates a new excel file `oldname_SORTED.xlsx`. Here additional sheets with sorted data are added, specifically:
+
 - Table of People -> Everyone is printed here with the activities in timeslots they were asigned to
 - Table of Attendants -> Every activity generates a sheet with people who attend and basic statistics
 
