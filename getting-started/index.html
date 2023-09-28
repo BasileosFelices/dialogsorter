@@ -337,6 +337,25 @@
   
   
   
+    <li class="md-nav__item">
+      <a href="../troubleshooting/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Troubleshooting
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
     
     
       
@@ -371,7 +390,7 @@
         
           
         
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
         
           
           
@@ -387,14 +406,14 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_6" id="__nav_6_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
             Reference
           </label>
@@ -656,15 +675,16 @@ If you are familiar with git there is nothing easier than just cloning the repos
 </code></pre>
 <p>You can also just download the repository as zip and extract wherever you want to work. What you really need is the diasorter folder where the code is and the <code>config.ini</code> file.</p>
 <h3 id="installing-python-and-openpyxl">Installing python and openpyxl</h3>
-<p>First of all, you need python on your system. Luckily, you can find a lot of tutorials for that online. You also need to be able to use
-python pip package manager as the second step is installing the requiered openpyxl library. You can use a provided <code>requirements.txt</code> file</p>
-<pre><code class="language-shell">pip install -r requirements.txt
+<p>First of all, you need <a href="https://www.python.org/downloads/">python3</a> on your system. I used python 3.11. Luckily, you can find a lot of <a href="https://www.tutorialspoint.com/how-to-install-python-in-windows">tutorials</a> for that online. You also need to be able to use
+python pip package manager as the second step is installing the required openpyxl library. You can use a provided <code>requirements.txt</code> file</p>
+<pre><code class="language-shell">python -m pip install -r requirements.txt
 </code></pre>
+<p>If you are using windows I suggest using powershell. It is surely on your computer and this should work there as well.</p>
 <h3 id="prepare-the-input-data">Prepare the input data</h3>
 <p>While the goal was to make only minimal demands on the structure of the input data, there still are some limitations. Most importantly it needs to be an Excel file (xlsx/xlsm/xltx/xltm)</p>
-<p>The script expects a table typically generated from an online form, i one row header and than rows of data for each answer/person. There are no requirements on the order or even number of colums. The important columns are found thanks to header names that can be configured in the config file. While the config should handle complicated headers, it is reccomended to rename the imporant headers for simplicity.</p>
-<p>The preferences have the most strict format. Every time slot, the multiple options of which only one is chosen that is, has to be in a single cell and different options need to be sorted by the preference and delimited by a semicolon(;). At the moment this is hard-coded behaviour, although the delimited could be quiete easily changed in <a href="../reference/Person/">code</a>. </p>
-<p>I reccomend keeping the data file in the root folder. </p>
+<p>The script expects a table typically generated from an online form, i one row header and than rows of data for each answer/person. There are no requirements on the order or even number of columns. The important columns are found thanks to header names that can be configured in the config file. While the config should handle complicated headers, it is recommended to rename the important headers for simplicity.</p>
+<p>The preferences have the most strict format. Every time slot, the multiple options of which only one is chosen that is, has to be in a single cell and different options need to be sorted by the preference and delimited by a semicolon(;). At the moment this is hard-coded behavior, although the delimited could be quite easily changed in <a href="../reference/Person/">code</a>. </p>
+<p>I recommend keeping the data file in the root folder. </p>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
 <p>The input data can really be as simple as this. Both more slots and personal info may be included, however.</p>
@@ -695,7 +715,7 @@ python pip package manager as the second step is installing the requiered openpy
 </div>
 <h3 id="configure-the-configuration-file">Configure the configuration file</h3>
 <p>Now that our dataset is in order, we need to tell the sorter how we prepared the config file.
-See <a href="../setting-config/">HowTo: Setting up a config file</a> to understand your options.</p>
+See <a href="../setting-config/">HowTo: Setting up a config file</a> to understand your options in detail.</p>
 <p>For now use the supplied <code>config.ini</code> as a start. Open in and be sure to modify:
 - filename: write a complete name (path) of your data set here
 - name: the only compulsory personal information column, make sure the definition matches a column header in your excel file
@@ -703,10 +723,10 @@ See <a href="../setting-config/">HowTo: Setting up a config file</a> to understa
 - capacities: in the <code>capacity</code> section, write all your activities and their capacities as such: <code>activity name = capacity</code></p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>The <code>orderby</code> determines the order of priority for people to get their most desired priorities! I recommend to use a column determining the time of submitting the form. As such, the first person who filled the form, chooses first from the so far empty activities.</p>
+<p>The <code>orderby</code> determines the order of priority for people to get their most desired priorities! I recommend to use a column determining the time of submitting the form. As such, First come, first served basis is utilized.</p>
 </div>
 <h3 id="run-the-script">Run the script</h3>
-<p>Everything should be ready now! Run the <code>diaSorter.py</code> either from your favourite IDE or a console.</p>
+<p>Everything should be ready now! Run the <code>diaSorter.py</code> either from your favorite IDE or a console.</p>
 <pre><code class="language-shell">python diasorter/diaSorter.py
 </code></pre>
 <p>Congratulations! You now have a new _SORTED.xlsx data file you needed!</p>
