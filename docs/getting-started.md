@@ -13,12 +13,14 @@ You can also just download the repository as zip and extract wherever you want t
 
 ### Installing python and openpyxl
 
-First of all, you need python on your system. Luckily, you can find a lot of tutorials for that online. You also need to be able to use
+First of all, you need [python3](https://www.python.org/downloads/) on your system. I used python 3.11. Luckily, you can find a lot of [tutorials](https://www.tutorialspoint.com/how-to-install-python-in-windows) for that online. You also need to be able to use
 python pip package manager as the second step is installing the required openpyxl library. You can use a provided `requirements.txt` file
 
 ```shell
-pip install -r requirements.txt
+python -m pip install -r requirements.txt
 ```
+
+If you are using windows I suggest using powershell. It is surely on your computer and this should work there as well.
 
 ### Prepare the input data
 
@@ -41,7 +43,7 @@ I recommend keeping the data file in the root folder.
 ### Configure the configuration file
 
 Now that our dataset is in order, we need to tell the sorter how we prepared the config file.
-See [HowTo: Setting up a config file](setting-config.md) to understand your options.
+See [HowTo: Setting up a config file](setting-config.md) to understand your options in detail.
 
 For now use the supplied `config.ini` as a start. Open in and be sure to modify:
 - filename: write a complete name (path) of your data set here
@@ -50,7 +52,7 @@ For now use the supplied `config.ini` as a start. Open in and be sure to modify:
 - capacities: in the `capacity` section, write all your activities and their capacities as such: `activity name = capacity`
 
 !!! warning
-    The `orderby` determines the order of priority for people to get their most desired priorities! I recommend to use a column determining the time of submitting the form. As such, the first person who filled the form, chooses first from the so far empty activities.
+    The `orderby` determines the order of priority for people to get their most desired priorities! I recommend to use a column determining the time of submitting the form. As such, First come, first served basis is utilized.
 
 ### Run the script
 
