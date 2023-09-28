@@ -1,0 +1,23 @@
+site_name: Dialog Sorter Documentation
+
+repo_url: https://github.com/BasileosFelices/dialogsorter
+copyright: Filip Spelina, 2023
+
+plugins:
+  - mkdocstrings
+  # - with-pdf
+
+markdown_extensions:
+  - admonition
+  - tables
+
+theme:
+  name: material
+  palette:
+    scheme: slate
+  features:
+    - navigation.expand
+    - navigation.path
+    - navigation.indexes
+    - content.code.copy
+    

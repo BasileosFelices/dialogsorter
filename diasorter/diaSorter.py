@@ -1,4 +1,4 @@
-"""This servers as the main function of the Dialog sorter project
+"""This serves as the main function of the Dialog sorter project
 
 Dialog sorter is a script used for sorting people by their preferences submitted through an electronic form
 to activities that belong to a certain time slots.
