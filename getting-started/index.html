@@ -716,11 +716,13 @@ python pip package manager as the second step is installing the required openpyx
 <h3 id="configure-the-configuration-file">Configure the configuration file</h3>
 <p>Now that our dataset is in order, we need to tell the sorter how we prepared the config file.
 See <a href="../setting-config/">HowTo: Setting up a config file</a> to understand your options in detail.</p>
-<p>For now use the supplied <code>config.ini</code> as a start. Open in and be sure to modify:
-- filename: write a complete name (path) of your data set here
-- name: the only compulsory personal information column, make sure the definition matches a column header in your excel file
-- orderby: the definition needs to match previously correctly defined personal information.
-- capacities: in the <code>capacity</code> section, write all your activities and their capacities as such: <code>activity name = capacity</code></p>
+<p>For now use the supplied <code>config.ini</code> as a start. Open in and be sure to modify:</p>
+<ul>
+<li>filename: write a complete name (path) of your data set here</li>
+<li>name: the only compulsory personal information column, make sure the definition matches a column header in your excel file</li>
+<li>orderby: the definition needs to match previously correctly defined personal information.</li>
+<li>capacities: in the <code>capacity</code> section, write all your activities and their capacities as such: <code>activity name = capacity</code></li>
+</ul>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>The <code>orderby</code> determines the order of priority for people to get their most desired priorities! I recommend to use a column determining the time of submitting the form. As such, First come, first served basis is utilized.</p>
