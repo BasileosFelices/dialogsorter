@@ -10,6 +10,9 @@ DialogSorters takes an excel file with online form answers where people were ask
 
 Or none at all. 
 
+!!! tip
+    To actually get started try looking up the [**Getting started**](getting-started.md) section on the left.:)
+
 !!! warning
     Make sure to read the output console. As warnings such as a person with no assigned activity are printed there.
 
@@ -37,9 +40,6 @@ I am publishing freely under open-source MIT license. For the foreseeable future
 General thanks need to go to Jiří Sejkora who asked me to even do this and kept me motivated enough to finish this.
 
 Openpyxl, MKDocs and Material theme for MKDocs are utilized.
-
-!!! tip
-    To actually get started try looking up the [**Getting started**](getting-started.md) section on the left.:)
 
 !!! info
     As you can see, I am quite enjoying making these note-like boxes.

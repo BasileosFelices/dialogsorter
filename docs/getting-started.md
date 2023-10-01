@@ -46,6 +46,7 @@ Now that our dataset is in order, we need to tell the sorter how we prepared the
 See [HowTo: Setting up a config file](setting-config.md) to understand your options in detail.
 
 For now use the supplied `config.ini` as a start. Open in and be sure to modify:
+
 - filename: write a complete name (path) of your data set here
 - name: the only compulsory personal information column, make sure the definition matches a column header in your excel file
 - orderby: the definition needs to match previously correctly defined personal information.
